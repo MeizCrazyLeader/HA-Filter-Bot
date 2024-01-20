@@ -6,7 +6,7 @@ umongo
 pymongo
 pytz
 cinemagoer
-shortzy
+adrinolinks
 aiohttp
 aiofiles
 telegraph
