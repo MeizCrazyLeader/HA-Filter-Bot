@@ -11,7 +11,7 @@ import time, re
 from datetime import datetime
 from typing import List, Any, Union, Optional, AsyncGenerator
 from database.users_chats_db import db
-from shortzy import Shortzy
+from rget import requests.get
 
 imdb = Cinemagoer() 
 
