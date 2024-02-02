@@ -210,10 +210,13 @@ def list_to_str(k):
     else:
         return ', '.join(f'{elem}' for elem in k)
     
-async def get_shortlink(url, api, link):
-    shortzy = Shortzy(api_key=api, base_site=url)
-    link = await shortzy.convert(link)
-    return link
+def get_shortlink(url): 
+    rget = requests.get(f"https://{SHORTLINK_URL}/api?api={SHORTLINK_API}&url={url}&alias={generate_random_alphanumeric()}") 
+    rjson = rget.json() 
+    if rjson["status"] == "success" or rget.status_code == 200: 
+        return rjson["shortenedUrl"] 
+    else: 
+        return url
 
 def get_readable_time(seconds):
     periods = [('d', 86400), ('h', 3600), ('m', 60), ('s', 1)]
