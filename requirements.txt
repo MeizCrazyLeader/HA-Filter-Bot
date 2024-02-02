@@ -11,4 +11,4 @@ aiofiles
 telegraph
 openai
 speedtest-cli
-shortzy
+requests
